@@ -25,8 +25,8 @@ def diff_factor(factor1, factor2):
   factor1.sort()
   factor2.sort()
   j = 0
-  answer = []
-  for i in range(0, len(factor1)):
+  answer = [1]
+  for i in range(0, len(factor2)):
     if j < len(factor1) and factor2[i] > factor1[j]:
       while factor2[i] > factor1[j]:
         answer.append(factor1[j])
@@ -43,7 +43,7 @@ def common_factor(factor1, factor2):
   factor1.sort()
   factor2.sort()
   j = 0
-  answer = []
+  answer = [1]
   for i in range(0, len(factor1)):
     if j < len(factor2) and factor1[i] == factor2[j]:
       answer.append(factor1[i])
