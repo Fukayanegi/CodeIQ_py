@@ -20,7 +20,8 @@ def make_primes(limit):
   return primes
 
 input = map(int, raw_input().split(' '))
-digit = math.log(input[0], 10)
+digit = len(str(input[0]))
+f_str = "%0" + str(digit) + "d-%0" + str(digit) + "d:"
 
 primes = make_primes(input[0])
 ps = enumerate(primes)
@@ -35,4 +36,4 @@ for base in range(1, input[0], input[1]):
       i, target = ps.next()
     except StopIteration:
       break
-  print("%02d-%02d:" % (base, section_limit) + "*"*frequency)
+  print(f_str % (base, section_limit) + "*"*frequency)
