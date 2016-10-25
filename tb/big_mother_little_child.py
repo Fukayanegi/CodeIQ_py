@@ -8,5 +8,10 @@ try:
 except EOFError:
   pass
 
+import re
+pattern = re.compile('[aiueoAIUEO]')
 for line in lines:
-  print(line)
+  if pattern.search(line):
+    print(line.upper())
+  else:
+    print(line.lower())
